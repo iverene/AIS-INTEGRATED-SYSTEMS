@@ -1,11 +1,12 @@
 export const create = async (profile) => {
     const transformedProfile = {
         name: profile.firstName + " " + profile.lastName,
-        address: profile.address,
+        "address": profile.address,
         birthdate: profile.dob,
         "program": profile.course + " " + profile.major,
         "studentStatus": profile.status
     }
+
 
     const response = await fetch(
         `https://ais-simulated-legacy.onrender.com/api/students`, {
