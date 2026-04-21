@@ -1,6 +1,7 @@
 import express from "express";
 import 'dotenv/config.js';
 import authRoutes from './routes/authRoute.js';
+import profileRoutes from './routes/profileRoute.js';
 
 //create express app
 const app = express();
@@ -26,3 +27,4 @@ try {
 }
 
 app.use('/auth', authRoutes);
+app.use('/api/profile', profileRoutes);
