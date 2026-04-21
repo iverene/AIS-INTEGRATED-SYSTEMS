@@ -39,7 +39,7 @@ export const createUser = async (userProfile, email, password) => {
         const salt = bcrypt.genSaltSync (10);
         const hashedPassword = bcrypt.hashSync (password, salt)
 
-        const response = await fetch(`https://ais-simulated-legacy.onrender.com/api/students`, {
+        const response = await fetch(`http://localhost:4000/auth/register`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
