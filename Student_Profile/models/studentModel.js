@@ -1,3 +1,19 @@
+export const createStudent = async (studentData) => {
+    const response = await fetch(`http://localhost:4000/api/profile`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(studentData)
+    });
+
+    if (!response.ok) {
+        throw new Error('Failed to create student record.');
+    }
+
+    return await response.json();
+};
+
 export const getStudentProfile = async (studentId) => {
     // Fetches from the Adapter Layer
     const response = await fetch(`http://localhost:4000/api/profile/${studentId}`, {

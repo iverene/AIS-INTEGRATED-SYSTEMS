@@ -9,4 +9,7 @@ studentRoutes.get('/:id', StudentController.getProfile);
 // Get all student profiles
 studentRoutes.get('/', StudentController.listAllProfiles);
 
+// POST /api/student (New)
+studentRoutes.post('/', StudentController.createProfile);
+
 export default studentRoutes;

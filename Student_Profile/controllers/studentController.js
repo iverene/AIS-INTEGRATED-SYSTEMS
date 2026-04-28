@@ -1,5 +1,17 @@
 import * as StudentModel from '../models/studentModel.js';
 
+export const createProfile = async (req, res) => {
+    try {
+        const result = await StudentModel.createStudent(req.body);
+        res.status(201).json(result);
+    } catch (error) {
+        res.status(500).json({
+            success: false,
+            message: error.message
+        });
+    }
+};
+
 export const getProfile = async (req, res) => {
     const { id } = req.params;
     try {
