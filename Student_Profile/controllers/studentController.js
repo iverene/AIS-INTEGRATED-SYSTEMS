@@ -3,7 +3,12 @@ import * as StudentModel from '../models/studentModel.js';
 export const createProfile = async (req, res) => {
     try {
         const result = await StudentModel.createStudent(req.body);
-        res.status(201).json(result);
+        res.status(201).json({
+            success: true, 
+            message: [
+                {result: "A profile has been added!"}
+            ]
+        });
     } catch (error) {
         res.status(500).json({
             success: false,
